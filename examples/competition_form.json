@@ -1,0 +1,128 @@
+{
+  "free_account_example": {
+    "tool": "form_create_normal",
+    "description": "适用于所有账号（含非会员），通过选项内嵌说明 + 非必填附属题 + 图片/文件双上传实现竞赛与奖状收集",
+    "args": {
+      "title": "竞赛经历与奖状材料收集表",
+      "subtitle": "未参加过竞赛者在选择“否”后可直接提交；参加过多项竞赛者可多次提交，或一次上传多张奖状图片/压缩包。",
+      "questions": [
+        {
+          "type": "QUESTION_TYPE_SIMPLE",
+          "title": "填报人姓名",
+          "required": true,
+          "config": {
+            "text": {
+              "data_type": "DATA_TYPE_TEXT",
+              "placeholder": "请输入真实姓名"
+            }
+          }
+        },
+        {
+          "type": "QUESTION_TYPE_RADIO",
+          "title": "是否参加过竞赛",
+          "subtitle": "选「否」可直接提交；选「是」请继续填写下方竞赛名与奖状上传题",
+          "required": true,
+          "config": {
+            "choice": {
+              "options": [
+                { "label": "是（请继续填写下方竞赛名称并上传奖状材料，可多次提交）" },
+                { "label": "否（无需填写下方竞赛题，直接点击提交即可）" }
+              ]
+            }
+          }
+        },
+        {
+          "type": "QUESTION_TYPE_SIMPLE",
+          "title": "竞赛名称（参加过竞赛者填写）",
+          "subtitle": "如参加过多项竞赛，可用分号隔开填写，或提交本份后再次提交",
+          "required": false,
+          "config": {
+            "text": {
+              "data_type": "DATA_TYPE_TEXT",
+              "placeholder": "请输入完整竞赛名称"
+            }
+          }
+        },
+        {
+          "type": "QUESTION_TYPE_SELECT",
+          "title": "获奖等级（参加过竞赛者填写）",
+          "required": false,
+          "config": {
+            "choice": {
+              "options": [
+                { "label": "国家级一等奖" },
+                { "label": "国家级二等奖" },
+                { "label": "国家级三等奖" },
+                { "label": "省级奖项" },
+                { "label": "校级奖项" },
+                { "label": "其他/参与奖" }
+              ]
+            }
+          }
+        },
+        {
+          "type": "QUESTION_TYPE_FILE_IMAGE",
+          "title": "奖状照片上传（最多可传 6 张）",
+          "subtitle": "参加过竞赛者请上传奖状照片",
+          "required": false
+        },
+        {
+          "type": "QUESTION_TYPE_FILE",
+          "title": "奖状电子版材料上传（PDF/压缩包等）",
+          "subtitle": "如有 PDF 证书或多份奖状压缩包，请在此上传",
+          "required": false
+        }
+      ]
+    }
+  },
+  "vip_table_question_example": {
+    "tool": "form_update_content",
+    "description": "适用于腾讯文档会员账号（非会员调用会返回 510002），单道表格题即可动态添加多行录入竞赛名称与对应奖状",
+    "operation_sample": {
+      "add_question": {
+        "question": {
+          "type": "QUESTION_TYPE_TABLE",
+          "title": "竞赛名称与奖状材料（可点击添加多行）",
+          "subtitle": "仅参加过竞赛者填写；每行录入一项竞赛并上传对应奖状",
+          "required": false,
+          "config": {
+            "table": {
+              "columns": [
+                {
+                  "type": "QUESTION_TYPE_SIMPLE",
+                  "title": "竞赛名称",
+                  "config": {
+                    "text": {
+                      "data_type": "DATA_TYPE_TEXT",
+                      "placeholder": "请输入完整竞赛名称"
+                    }
+                  }
+                },
+                {
+                  "type": "QUESTION_TYPE_SELECT",
+                  "title": "获奖等级",
+                  "config": {
+                    "choice": {
+                      "options": [
+                        { "label": "国家级一等奖" },
+                        { "label": "国家级二等奖" },
+                        { "label": "国家级三等奖" },
+                        { "label": "省级奖项" },
+                        { "label": "校级奖项" },
+                        { "label": "其他/参与奖" }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "QUESTION_TYPE_FILE",
+                  "title": "奖状材料"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
