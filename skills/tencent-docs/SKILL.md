@@ -1,15 +1,17 @@
 ---
-name: tencent-docs
-description: 腾讯文档（docs.qq.com）增强版 Agent Skill —— 完整覆盖 5 大官方 MCP 端点（tencent-docs / doc-mcp / sheet-mcp / slide-mcp / form-mcp），共 524 个工具。重点补齐原生收集表（form-mcp，22 个工具）的创建、编辑、统计、会员题型降级与无逻辑接口场景下的 L1 结构收敛方案。
-homepage: https://docs.qq.com/home
-version: 1.1.0-enhanced
+name: tencent-docs-addon
+description: 非官方社区附加版腾讯文档（docs.qq.com）Agent Skill —— 补齐 5 个 MCP 端点（含 form-mcp 22 个收集表工具）的路由、工作流、会员题型降级与无逻辑接口 L1 收敛方案。本 Skill 为第三方非官方扩展，与腾讯无隶属关系。
+homepage: https://github.com/fengkaobanli/tencent-docs-skill-addon
+version: 1.1.0-community-addon
 ---
 
-# 腾讯文档 MCP 增强使用指南（含 `form-mcp` 完整收集表能力）
+# 腾讯文档 MCP 社区附加使用指南（Unofficial Add-on）
 
-本 Skill 在腾讯文档官方 MCP 基础上，补齐了长期缺失的 **原生收集表 `form-mcp`（22 个工具）** 接入指南、工作流规范、会员权益降级策略以及无逻辑接口场景下的 L1/L2 方案。
+> **免责声明**：本 Skill 为第三方社区维护的**非官方附加扩展**，与腾讯公司及腾讯文档官方无任何隶属、授权或背书关系。请通过腾讯文档正规途径获取个人授权并遵守平台服务协议。
 
-## 5 大官方 MCP 端点总览（共用同一 Token）
+本 Skill 在社区常见配置基础上，补齐了 **收集表 `form-mcp`（22 个工具）** 的接入指南、工作流规范、会员权益降级策略以及无逻辑接口场景下的 L1/L2 方案。
+
+## 5 大 MCP 端点总览（共用同一授权 Token）
 
 | 服务名 (`service`) | 官方 Endpoint | 工具数 | 负责品类与能力 |
 |---|---|---:|---|
